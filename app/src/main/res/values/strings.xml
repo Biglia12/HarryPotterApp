@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">HarryPotterApp</string>
+    <string name="log_in">Iniciar Sesion</string>
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="text_welcome">Bienvenido a la app de Harry Potter. Aqui encontraras informacion sobre tus personajes favoritos. Inicia sesion o registrate</string>
+
 </resources>

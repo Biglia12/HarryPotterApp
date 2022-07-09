@@ -2,13 +2,13 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android"
     android:opacity="opaque">
 
-    <item android:drawable="@color/blue"/>
+    <item android:drawable="@color/lightBlue"/>
 
     <item
         android:left="10dp"
         android:right="10dp"
-        android:top="260dp"
-        android:bottom="260dp"
+        android:top="280dp"
+        android:bottom="280dp"
         >
         <bitmap android:src="@drawable/harrypotterlogo"/>
     </item>
