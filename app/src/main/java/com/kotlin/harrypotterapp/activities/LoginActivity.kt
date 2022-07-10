@@ -19,39 +19,38 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        
-        checkPreference()
+
+        checkPreference() // metodo para las preferencias
 
         initialiceUser()
 
     }
 
     private fun checkPreference() {
-        if (sharedPreferences.getCloseActivity(this)) {
-            sendToMainActivity()
-            finish()
+        if (sharedPreferences.getCloseActivity(this)) { //Esta validacion es para que esta actividad no se vuelva a mostrar una vez que el usuario inicio sesion ya que esto guarda localmente la persistencia de datos en el telefono
+            sendToMainActivity()// pasamos a la siguiente activity
         }
     }
 
     private fun initialiceUser() {
-        user = User()
+        user = User() // Creamos el usuario
         user.userName = "jose12"
         user.passWord = "1234"
 
-        btnClick(user)
+        btnClick(user) // metodo para el boton en el cual le pasaremos el usuario
     }
 
     private fun btnClick(user: User) {
 
         binding.buttonLogin.setOnClickListener {
 
-            val userString: String= binding.editTextUser.text.toString()
+            val userString: String= binding.editTextUser.text.toString() // se crean estas variable de tipo string para los editext que se pasan a string
             val passString: String=  binding.editTextPass.text.toString()
 
             sharedPreferences.setFullNameUserLoged(this,userString)
             sharedPreferences.setCloseActivity(this,true)
 
-            if (userString == user.userName && passString == user.passWord) {
+            if (userString == user.userName && passString == user.passWord) { // validacion para que
                sendToMainActivity()
             }else if (userString.isEmpty() || passString.isEmpty()){
                 Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT)
@@ -65,6 +64,7 @@ class LoginActivity : AppCompatActivity() {
     private fun sendToMainActivity() {
         //Toast.makeText(this, "Bienvenido:${user.userName}", Toast.LENGTH_SHORT).show()
         startActivity(Intent(this, MainActivity::class.java))
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         finish()
     }
 }

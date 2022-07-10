@@ -3,6 +3,10 @@
     <string name="log_in">Iniciar Sesion</string>
     <string name="user">Usuario</string>
     <string name="password">Contraseña</string>
+    <string name="log_out">Cerrar Sesion</string>
     <string name="text_welcome">Bienvenido a la app de Harry Potter. Aqui encontraras informacion sobre tus personajes favoritos. Inicia sesion o registrate</string>
+    <string name="message_log_out">Esta seguro que desea cerrar sesion?</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

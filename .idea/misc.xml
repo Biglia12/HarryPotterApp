@@ -5,11 +5,17 @@
       <map>
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/background_color_login.xml" value="0.194" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/button_rounded.xml" value="0.194" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/button_style.xml" value="0.234" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/edittextx_border.xml" value="0.194" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.194" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/ic_user_default.xml" value="0.234" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/splash_background.xml" value="0.25" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/activity_main.xml" value="0.3383152173913043" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/fragment_settings.xml" value="0.2893258426966292" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/fragment_videos.xml" value="0.21" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/menu/nav_menu.xml" value="0.2064814814814815" />
       </map>
     </option>
   </component>

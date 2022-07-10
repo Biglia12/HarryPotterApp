@@ -2,18 +2,56 @@ package com.kotlin.harrypotterapp.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.kotlin.harrypotterapp.R
 import com.kotlin.harrypotterapp.SharedPreferences
+import com.kotlin.harrypotterapp.databinding.ActivityLoginBinding
+import com.kotlin.harrypotterapp.databinding.ActivityMainBinding
+import com.kotlin.harrypotterapp.fragments.HomeFragment
+import com.kotlin.harrypotterapp.fragments.SettingsFragment
+import com.kotlin.harrypotterapp.fragments.VideosFragment
 
 class MainActivity : AppCompatActivity() {
 
     val sharedPreferences: SharedPreferences = SharedPreferences()
+    private lateinit var binding: ActivityMainBinding
+
+    private lateinit var homeFragment : HomeFragment
+    private lateinit var videosFragment : VideosFragment
+    private lateinit var settingsFragment : SettingsFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        homeFragment = HomeFragment()
+        videosFragment = VideosFragment()
+        settingsFragment = SettingsFragment()
+
+        loadFragment(homeFragment) //metodo para cargar el fragment. Le pasamos el homefragment para que inicie primero
+
+        bottomNavigationListener()
 
 
+    }
 
+    private fun bottomNavigationListener() {
+        binding.bottomNavigation.setOnItemSelectedListener { //seleccionaremos los fragments con este listener del bottom
+            when(it.itemId){
+                R.id.menu_home -> loadFragment(homeFragment)
+                R.id.menu_video -> loadFragment(videosFragment)
+                R.id.menu_setting -> loadFragment(settingsFragment)
+            }
+            true
+        }
+    }
+
+    private fun loadFragment(fragment : Fragment) {
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.containerFragment, fragment)
+            commit()
+        }
     }
 }
