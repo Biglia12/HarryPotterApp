@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.kotlin.harrypotterapp.R
 import com.kotlin.harrypotterapp.SharedPreferences
 import com.kotlin.harrypotterapp.databinding.ActivityLoginBinding
 import com.kotlin.harrypotterapp.model.User
@@ -55,10 +56,10 @@ class LoginActivity : AppCompatActivity() {
                 sendToMainActivity()
 
             } else if (userString.isEmpty() || passString.isEmpty()) {
-                Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT)
+                Toast.makeText(this, resources.getString(R.string.empty_fields), Toast.LENGTH_SHORT)
                     .show()
             } else
-                Toast.makeText(this, "Credenciales Invalidas, intente de nuevo", Toast.LENGTH_SHORT)
+                Toast.makeText(this, resources.getString(R.string.wrong_user), Toast.LENGTH_SHORT)
                     .show()
         }
     }
