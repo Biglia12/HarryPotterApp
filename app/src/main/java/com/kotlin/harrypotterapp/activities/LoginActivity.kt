@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initialiceUser() {
-        user = User() // Creamos el usuario
+        user = User() // Creamos el objeto usuario
         user.userName = "jose12"
         user.passWord = "1234"
 
