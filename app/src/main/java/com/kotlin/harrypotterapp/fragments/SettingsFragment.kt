@@ -19,12 +19,17 @@ class SettingsFragment : Fragment() {
 
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
+    private lateinit var  sharedPreferences: com.kotlin.harrypotterapp.SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
+
+        sharedPreferences = com.kotlin.harrypotterapp.SharedPreferences()
+
+        getNameUserPref()
 
         binding.buttonLogOut.setOnClickListener {
             deletePreferences()
@@ -33,6 +38,10 @@ class SettingsFragment : Fragment() {
 
         return binding.root
 
+    }
+
+    private fun getNameUserPref() {
+        binding.textViewNameUser.text = activity?.let { sharedPreferences.getFullNameUserLoged(it) }
     }
 
     private fun alertDialogLogOut() {

@@ -12,7 +12,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var user: User
-    private var sharedPreferences : SharedPreferences = SharedPreferences()
+    private var sharedPreferences: SharedPreferences = SharedPreferences()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,18 +44,20 @@ class LoginActivity : AppCompatActivity() {
 
         binding.buttonLogin.setOnClickListener {
 
-            val userString: String= binding.editTextUser.text.toString() // se crean estas variable de tipo string para los editext que se pasan a string
-            val passString: String=  binding.editTextPass.text.toString()
-
-            sharedPreferences.setFullNameUserLoged(this,userString)
-            sharedPreferences.setCloseActivity(this,true)
+            val userString: String =
+                binding.editTextUser.text.toString() // se crean estas variable de tipo string para los editext que se pasan a string
+            val passString: String = binding.editTextPass.text.toString()
 
             if (userString == user.userName && passString == user.passWord) { // validacion para que
-               sendToMainActivity()
-            }else if (userString.isEmpty() || passString.isEmpty()){
+
+                sharedPreferences.setFullNameUserLoged(this, userString)
+                sharedPreferences.setCloseActivity(this, true)
+                sendToMainActivity()
+
+            } else if (userString.isEmpty() || passString.isEmpty()) {
                 Toast.makeText(this, "Campos vacios", Toast.LENGTH_SHORT)
                     .show()
-            }else
+            } else
                 Toast.makeText(this, "Credenciales Invalidas, intente de nuevo", Toast.LENGTH_SHORT)
                     .show()
         }

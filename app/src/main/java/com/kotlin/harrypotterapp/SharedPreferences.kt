@@ -5,7 +5,7 @@ import android.content.Context
 
 class SharedPreferences {
 
-    //TODO esta clase contendra todas las sharedpreferences que son para guardar datos en el telefono que tienen una clave-valor para que pasemos el parametro que queremos que se guarde y tambien para obtenerlo
+    //TODO esta clase contendra todas las sharedpreferences que son para guardar datos en el telefono que tienen una clave-valor para que pasaremos el parametro que queremos que se guarde y tambien para obtenerlo
 
     fun setFullNameUserLoged(context: Activity, userName: String) { //preferencia para guardar el nombre de usuario
         val sharedPref =
@@ -15,7 +15,7 @@ class SharedPreferences {
         editor.apply()
     }
 
-    fun getFullNameUserLoged(context: Activity, userName: String): String? {
+    fun getFullNameUserLoged(context: Activity): String? {
         val sharedPref = context.application.getSharedPreferences("user_pass_login", Context.MODE_PRIVATE)
         return sharedPref.getString("userNamePref",null)
     }

@@ -1,0 +1,18 @@
+SplashActivity: En esta actividad mostraremos una presentacion de la app que durara unos dos segundo, que al pasar esos segundos nos
+nos llevara a la pantalla de login
+
+LoginActivity: En esta pantalla haremos que el usuario inicie sesion
+Se cre un model llamado "User" el cuadno tendra las varaibles user y password de tipo string. La cual usaremaos para crear el usuario
+en el login activity para poder loguaer. En este caso el usario esta hardcodeado y para entrar a la pantalla principal el usuario
+siempre sera User:jose12 contraseña:1234
+
+MainActivity: Esta sera la actividad principal el sera la acticidad padre que contendra los fragmentos. Creamos en su vista
+un bottomNavigationView el cual se posiciona en la parte inferior de la pantalla que contendra 3 opciones que seran los fragmentos.
+Tendremos:
+"HomeFragment" = que contendra los datos de los perosnajes de haarry potter
+"VideosFragment" = que contendra algunos videos de youtube
+"SettingsFragment" = Este fragmento nos mostrara las opciones como "cerrar sesion(con esto eliminaremos la preferencia que guaradmos en el login activity para que una vez que cerremos la sesion nos lleve al logina activity y  no volver a pasar por la main)"
+, "ayuda (se mandara a un mail falso para que el usario pueda escribir sus porblemas en la app o alguna sugerencia)" ,
+"cambiar a darkMode (se cambiara el thema de negro a balnco o al revez)" la app.
+Tambien tendremos una opcion para agregar una foto.
+
