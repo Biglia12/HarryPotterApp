@@ -7,18 +7,18 @@ class CharactersResponse {
 
     @SerializedName("hechizos")
     @Expose
-    private val hechizos: List<HechizoModel>? = null
+    val hechizos: List<HechizoModel>? = null
 
     @SerializedName("info")
     @Expose
-    private val info: List<InfoModel>? = null
+    val info: List<InfoModel>? = null
 
     @SerializedName("personajes")
     @Expose
-    private val personajes: List<CharactersModel>? = null
+    val personajes: List<CharactersModel>? = null
 
     @SerializedName("libros")
     @Expose
-    private val libros: List<BookModel>? = null
+    val libros: List<BookModel>? = null
 
 }

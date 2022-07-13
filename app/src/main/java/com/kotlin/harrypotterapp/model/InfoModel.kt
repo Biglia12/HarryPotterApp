@@ -8,14 +8,14 @@ class InfoModel {
 
     @SerializedName("id")
     @Expose
-    private val id: Int? = null
+    val id: Int? = null
 
     @SerializedName("tipo")
     @Expose
-    private val tipo: String? = null
+    val tipo: String? = null
 
     @SerializedName("contenido")
     @Expose
-    private val contenido: String? = null
+    val contenido: String? = null
 
 }

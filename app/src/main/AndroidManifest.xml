@@ -12,9 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HarryPotterApp">
         <activity
-            android:name=".activities.LoginActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name=".activities.DetailedCharacterActivity"
             android:exported="false" />
+        <activity
+            android:name=".activities.DetailedCharacters"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".activities.SplashActivity"
             android:exported="true"

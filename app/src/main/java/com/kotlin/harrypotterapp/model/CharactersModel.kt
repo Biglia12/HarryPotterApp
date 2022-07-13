@@ -8,34 +8,34 @@ class CharactersModel {
 
     @SerializedName("id")
     @Expose
-    private val id: Int? = null
+    val id: Int? = null
 
     @SerializedName("personaje")
     @Expose
-    private val personaje: String? = null
+    val personaje: String? = null
 
     @SerializedName("apodo")
     @Expose
-    private val apodo: String? = null
+    val apodo: String? = null
 
     @SerializedName("estudianteDeHogwarts")
     @Expose
-    private val estudianteDeHogwarts: Boolean? = null
+    val estudianteDeHogwarts: Boolean? = null
 
     @SerializedName("casaDeHogwarts")
     @Expose
-    private val casaDeHogwarts: String? = null
+    val casaDeHogwarts: String? = null
 
     @SerializedName("interpretado_por")
     @Expose
-    private val interpretadoPor: String? = null
+    val interpretadoPor: String? = null
 
     @SerializedName("hijos")
     @Expose
-    private val hijos: List<String>? = null
+    val hijos: List<String>? = null
 
     @SerializedName("imagen")
     @Expose
-    private val imagen: String? = null
+    val imagen: String? = null
 
 }

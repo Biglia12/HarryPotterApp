@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.kotlin.harrypotterapp.R
 import com.kotlin.harrypotterapp.SharedPreferences
-import com.kotlin.harrypotterapp.databinding.ActivityLoginBinding
 import com.kotlin.harrypotterapp.databinding.ActivityMainBinding
 import com.kotlin.harrypotterapp.fragments.HomeFragment
 import com.kotlin.harrypotterapp.fragments.SettingsFragment
@@ -54,4 +53,7 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
     }
+
+
+
 }

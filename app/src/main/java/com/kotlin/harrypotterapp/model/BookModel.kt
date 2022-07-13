@@ -11,26 +11,26 @@ class BookModel {
 
     @SerializedName("id")
     @Expose
-    private val id: Int? = null
+    val id: Int? = null
 
     @SerializedName("libro")
     @Expose
-    private val libro: String? = null
+    val libro: String? = null
 
     @SerializedName("titulo_original")
     @Expose
-    private val tituloOriginal: String? = null
+    val tituloOriginal: String? = null
 
     @SerializedName("fecha_de_lanzamiento")
     @Expose
-    private val fechaDeLanzamiento: String? = null
+    val fechaDeLanzamiento: String? = null
 
     @SerializedName("autora")
     @Expose
-    private val autora: String? = null
+    val autora: String? = null
 
     @SerializedName("descripcion")
     @Expose
-    private val descripcion: String? = null
+    val descripcion: String? = null
 
 }
