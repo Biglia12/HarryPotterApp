@@ -8,6 +8,7 @@ import com.kotlin.harrypotterapp.R
 import com.kotlin.harrypotterapp.SharedPreferences
 import com.kotlin.harrypotterapp.databinding.ActivityLoginBinding
 import com.kotlin.harrypotterapp.model.User
+import java.util.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -35,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun initialiceUser() {
         user = User() // Creamos el objeto usuario
-        user.userName = "jose12"
+        user.userName = "usuario123"
         user.passWord = "1234"
 
         btnClick(user) // metodo para el boton en el cual le pasaremos el usuario
@@ -45,27 +46,25 @@ class LoginActivity : AppCompatActivity() {
 
         binding.buttonLogin.setOnClickListener {
 
-            val userString: String =
-                binding.editTextUser.text.toString() // se crean estas variable de tipo string para los editext que se pasan a string
-            val passString: String = binding.editTextPass.text.toString()
+            val userString: String = binding.editTextUser.text.toString().lowercase(Locale.getDefault()) // se crean estas variable de tipo string para los editext que se pasan a string
+            val passString: String = binding.editTextPass.text.toString().lowercase(Locale.getDefault())
 
-            if (userString == user.userName && passString == user.passWord) { // validacion para que
+            if (userString == user.userName && passString == user.passWord) { // validacion para que se compruebe si el usuario es correcto
 
                 sharedPreferences.setFullNameUserLoged(this, userString)
                 sharedPreferences.setCloseActivity(this, true)
                 sendToMainActivity()
 
-            } else if (userString.isEmpty() || passString.isEmpty()) {
+            } else if (userString.isEmpty() || passString.isEmpty()) { // si el usuario no es correcto
                 Toast.makeText(this, resources.getString(R.string.empty_fields), Toast.LENGTH_SHORT)
                     .show()
             } else
-                Toast.makeText(this, resources.getString(R.string.wrong_user), Toast.LENGTH_SHORT)
+                Toast.makeText(this, resources.getString(R.string.wrong_user), Toast.LENGTH_SHORT) // campos vacios
                     .show()
         }
     }
 
-    private fun sendToMainActivity() {
-        //Toast.makeText(this, "Bienvenido:${user.userName}", Toast.LENGTH_SHORT).show()
+    private fun sendToMainActivity() { // mandar a la siguiente activity
         startActivity(Intent(this, MainActivity::class.java))
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         finish()

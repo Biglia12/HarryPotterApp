@@ -2,13 +2,14 @@ package com.kotlin.harrypotterapp.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.kotlin.harrypotterapp.R
 import com.kotlin.harrypotterapp.SharedPreferences
 import com.kotlin.harrypotterapp.databinding.ActivityMainBinding
 import com.kotlin.harrypotterapp.fragments.HomeFragment
 import com.kotlin.harrypotterapp.fragments.SettingsFragment
-import com.kotlin.harrypotterapp.fragments.VideosFragment
+import com.kotlin.harrypotterapp.fragments.WebFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     private lateinit var homeFragment : HomeFragment
-    private lateinit var videosFragment : VideosFragment
+    private lateinit var webFragment : WebFragment
     private lateinit var settingsFragment : SettingsFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +26,10 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        window.statusBarColor = ContextCompat.getColor(this, R.color.black)
+
         homeFragment = HomeFragment()
-        videosFragment = VideosFragment()
+        webFragment = WebFragment()
         settingsFragment = SettingsFragment()
 
         loadFragment(homeFragment) //metodo para cargar el fragment. Le pasamos el homefragment para que inicie primero
@@ -40,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener { //seleccionaremos los fragments con este listener del bottom
             when(it.itemId){
                 R.id.menu_home -> loadFragment(homeFragment)
-                R.id.menu_video -> loadFragment(videosFragment)
+                R.id.menu_video -> loadFragment(webFragment)
                 R.id.menu_setting -> loadFragment(settingsFragment)
             }
             true

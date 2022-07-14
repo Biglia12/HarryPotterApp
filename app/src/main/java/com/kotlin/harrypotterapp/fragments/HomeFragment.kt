@@ -65,17 +65,17 @@ class HomeFragment : Fragment(), OnItemCharacterClickListener {
     }
 
     private fun callServiceHp() {
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO).launch {//llamda al servicio
             val call = getRetrofit().create(Services::class.java).getCharacters()
             val body = call.body()
             activity?.runOnUiThread {
                 if (call.isSuccessful) { // si el servicio responde 200
-                    binding.progressBar.visibility = View.GONE
+                    binding.progressBar.visibility = View.GONE // para que el progressbar no siga
                     val characters = body?.personajes ?: emptyList()
                     listCharacter.clear()
                     listCharacter.addAll(characters)
                     adapter.notifyDataSetChanged() // para decirle al adapter que hubo cambios
-                } else { // si el servicio no funciona
+                } else { // por cualquier error del servicio
                     binding.progressBar.visibility = View.GONE
                     Toast.makeText(context, "Error para traer informacion", Toast.LENGTH_SHORT)
                         .show()
@@ -87,7 +87,7 @@ class HomeFragment : Fragment(), OnItemCharacterClickListener {
 
     override fun onItemClick(item: CharactersModel, position: Int) {
         val intent = Intent(context, DetailedCharacterActivity :: class.java)
-        intent.putExtra("IMAGE_URL", item.imagen)
+        intent.putExtra("IMAGE_URL", item.imagen) // madanmos informacion a la suiguietne activity
         intent.putExtra("NAME_CHARACTER", item.personaje)
         startActivity(intent)
 

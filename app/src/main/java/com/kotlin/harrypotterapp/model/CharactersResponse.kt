@@ -3,7 +3,7 @@ package com.kotlin.harrypotterapp.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class CharactersResponse {
+class CharactersResponse { // se crea para obtenerlos del servicio
 
     @SerializedName("hechizos")
     @Expose

@@ -11,7 +11,7 @@ import com.kotlin.harrypotterapp.model.CharactersModel
 import com.squareup.picasso.Picasso
 
 
-class CharacterAdapter(
+class CharacterAdapter( //adaptador para el recycler view
     val context: Context, val list: List<CharactersModel>,var clickListener: OnItemCharacterClickListener
 ) : RecyclerView.Adapter<CharacterAdapter.CharacterViewHolder>() {
 
@@ -22,7 +22,7 @@ class CharacterAdapter(
 
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount(): Int = list.size // tamaño de la lista
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         val item = list[position]
@@ -38,11 +38,11 @@ class CharacterAdapter(
 
         fun bind(list: CharactersModel, actionClick: OnItemCharacterClickListener) {
 
-            binding.textViewNameCharacter.text = list.personaje
-            binding.textViewHouseHogwarts.text = list.casaDeHogwarts
-            binding.textViewRealName.text = list.interpretadoPor
+            binding.textViewNameCharacter.text = list.personaje // seteamos el nombre del eprsonaje
+            binding.textViewHouseHogwarts.text = list.casaDeHogwarts //seteamos la casa
+            binding.textViewRealName.text = list.interpretadoPor // el nombre del actor
 
-            Picasso.get()
+            Picasso.get() // libreria para utilziar imagenes en la cual le pasaremos la url que viene por servicio
                 .load(list.imagen)
                 .placeholder(R.drawable.ic_icon_placeholder_harry)
                 .resize(250, 300)
@@ -59,7 +59,7 @@ class CharacterAdapter(
 
     }
 
-    interface OnItemCharacterClickListener {
+    interface OnItemCharacterClickListener { // interface que servira para el click de los items
         fun onItemClick(item: CharactersModel, position: Int)
     }
 

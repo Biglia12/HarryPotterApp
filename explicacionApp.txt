@@ -1,18 +1,57 @@
-SplashActivity: En esta actividad mostraremos una presentacion de la app que durara unos dos segundo, que al pasar esos segundos nos
-nos llevara a la pantalla de login
+Para ingresar a la app 
+usuario=usuario123
+contraseña=1234
 
-LoginActivity: En esta pantalla haremos que el usuario inicie sesion
+en el proyecto hay se agregaron comentarios
+
+-SplashActivity: En esta actividad mostraremos una presentacion de la app que durara unos dos segundo, que al pasar esos segundos nos
+nos llevara a la pantalla de login con un intent y pondremos un finish para finalizar la actividad asi no se volvera haci atars y volver 
+a mostrarla
+
+-LoginActivity: En esta pantalla haremos que el usuario inicie sesion
 Se cre un model llamado "User" el cuadno tendra las varaibles user y password de tipo string. La cual usaremaos para crear el usuario
-en el login activity para poder loguaer. En este caso el usario esta hardcodeado y para entrar a la pantalla principal el usuario
-siempre sera User:jose12 contraseña:1234
+en el login activity para poder loguer. En este caso el usario esta hardcodeado y para entrar a la pantalla principal el usuario
+siempre sera User:usuario123 contraseña:1234
+Tendremos validaciones para que el usuario pueda contnuar a la siguiente activity con las condiciones if. si el usuario es valido pasara a la siguienta acvitidad si no tirar mensajes de error
+ Usaremos preferencias una vez inciado sesion que para eso se hizo una clase aparte llamada SharedPreferences en la cual tednremos los set y get
+en la pantalla login para este caso se tendra una preferencia de tipo boolean que sera en el metodo setCloseActivity(this, true) que una vez el usuario inicio sesion se mandara en true
+y luego cuando el usario cierre o mate la app en esta actividad habra un metodo que le preguntara que tipo de boolean tiene esa preferencia
+en caso de ser falsa la app de login se abrira y en caso de true la app pasara a la Mainactivivity
 
-MainActivity: Esta sera la actividad principal el sera la acticidad padre que contendra los fragmentos. Creamos en su vista
+
+-MainActivity: Esta sera la actividad principal el sera la acticidad padre que contendra los fragmentos. Creamos en su vista
 un bottomNavigationView el cual se posiciona en la parte inferior de la pantalla que contendra 3 opciones que seran los fragmentos.
 Tendremos:
-"HomeFragment" = que contendra los datos de los perosnajes de haarry potter
-"VideosFragment" = que contendra algunos videos de youtube
-"SettingsFragment" = Este fragmento nos mostrara las opciones como "cerrar sesion(con esto eliminaremos la preferencia que guaradmos en el login activity para que una vez que cerremos la sesion nos lleve al logina activity y  no volver a pasar por la main)"
-, "ayuda (se mandara a un mail falso para que el usario pueda escribir sus porblemas en la app o alguna sugerencia)" ,
-"cambiar a darkMode (se cambiara el thema de negro a balnco o al revez)" la app.
-Tambien tendremos una opcion para agregar una foto.
 
+"HomeFragment" = que contendra los datos de los perosnajes de haarry potter.
+ En este fragmento consumiremos un servicio con corrutinas con retrofit que para esto tambien creamos una interface en la cual tendremos una peticion de tipo GET con la terminaciona de la url y esta peticion es para consultar la info del servicio. 
+. El servicio nos traera Los datso de los personajes y otrainformacion en la cual para estos crearemos models que lo almacenaremos en una package con el mismo nombre "models" que estos se
+llamaran "CharacterResponse"(Este sera el que contednra a los demas model) como "BookModel", "HechizoModel","HechizoModel" 
+y "CharacterModel" que es el que se utilizara para el recyclerview apra mostrar los datos de los personajes en una lista.
+Para el recycler creamos un adapter llamado "CharactersAdapter" en la cual almcenaremos los datos y la vista para enlazarlo al recycler view en este caso Tendremos a los datos de
+"CharacterModel" que los pondremos en el adapter y los mostraremos en el recicler que en la app aprareceran para scrollear como una lista.
+Ademas tednra un click en cual nos llevara a una actividad llamada 
+-"DetailedCharacter" le llevaremos los detalles del personaje del homefragment con un
+putExtra en el cual mostraremos el nombre y  la imagen del personaje que se cargara la url que le pasamos con el putextra con la libreria picasso para poder mostrarla. 
+
+
+"WebFragment" = Contendra una webView que nos mostrara una pagina de compras de harry potter. El webview es utlizado
+para mostrar una web dentro de una app
+
+"SettingsFragment" = Este fragmento nos mostrara las opciones como "cerrar sesion(con esto eliminaremos todas las preferencias que guardamos en la app por lo tanto una vez que cerremos la sesion nos lleve al logina activity y  no volver a pasar por la main)"
+, "ayuda (se mandara a un mail falso externo para dudas o ayudar al usuario)" ,
+"cambiar color de fondo" (se cambiara el color del fondo de perfil que lo haremos con un )" la app.
+
+-SharedPreferences: Esta clase almacenara las preferencias que son para guardar datos localmente como por ejemplo el nombre de usuario
+
+-Constants: clase en la cual almacenremos contantes como por ejemplo al url del servicio de harrypotter
+
+en res -> drawable tendremos los iconos e imagenes que usamos en la app
+
+en res -> menu creamos el menu apra el bottomNavigationView
+
+en res -> Layout tendremos las vistas de los fragments, adapter y activities
+
+en res -> Strings almacenaremos los strings
+
+en res-> Color alamcenremos los colores

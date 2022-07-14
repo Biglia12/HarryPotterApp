@@ -12,6 +12,11 @@
     <color name="blueDark">#283593</color>
     <color name="lightBlue">#1565c0</color>
     <color name="gray">#898989</color>
+    <color name="ltgray">#f0f0f0</color>
+    <color name="red">#CC0000</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#006633</color>
+
 
 
 </resources>
