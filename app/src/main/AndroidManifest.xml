@@ -6,16 +6,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/harrypotterlogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/harrypotterlogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.HarryPotterApp">
         <activity
             android:name=".activities.DetailedCharacterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.DetailedCharacters"
             android:exported="false" />
         <activity
             android:name=".activities.LoginActivity"

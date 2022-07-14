@@ -2,7 +2,7 @@ Para ingresar a la app
 usuario=usuario123
 contraseña=1234
 
-en el proyecto hay se agregaron comentarios
+en el proyecto hay se agregaron comentarios. Se deja apk para pruebas
 
 -SplashActivity: En esta actividad mostraremos una presentacion de la app que durara unos dos segundo, que al pasar esos segundos nos
 nos llevara a la pantalla de login con un intent y pondremos un finish para finalizar la actividad asi no se volvera haci atars y volver 
