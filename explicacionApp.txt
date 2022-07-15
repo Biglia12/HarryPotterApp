@@ -4,6 +4,10 @@ contraseña=1234
 
 en el proyecto hay se agregaron comentarios. Se deja apk para pruebas
 
+-Se utilizo este github para implementar el servicio de harry potter
+https://github.com/fedeperin/harry-potter-api
+
+
 -SplashActivity: En esta actividad mostraremos una presentacion de la app que durara unos dos segundo, que al pasar esos segundos nos
 nos llevara a la pantalla de login con un intent y pondremos un finish para finalizar la actividad asi no se volvera haci atars y volver 
 a mostrarla
@@ -23,7 +27,7 @@ en caso de ser falsa la app de login se abrira y en caso de true la app pasara a
 un bottomNavigationView el cual se posiciona en la parte inferior de la pantalla que contendra 3 opciones que seran los fragmentos.
 Tendremos:
 
-"HomeFragment" = que contendra los datos de los perosnajes de haarry potter.
+"HomeFragment" = que contendra los datos de los personajes de harry potter.
  En este fragmento consumiremos un servicio con corrutinas con retrofit que para esto tambien creamos una interface en la cual tendremos una peticion de tipo GET con la terminaciona de la url y esta peticion es para consultar la info del servicio. 
 . El servicio nos traera Los datso de los personajes y otrainformacion en la cual para estos crearemos models que lo almacenaremos en una package con el mismo nombre "models" que estos se
 llamaran "CharacterResponse"(Este sera el que contednra a los demas model) como "BookModel", "HechizoModel","HechizoModel" 
@@ -40,7 +44,7 @@ para mostrar una web dentro de una app
 
 "SettingsFragment" = Este fragmento nos mostrara las opciones como "cerrar sesion(con esto eliminaremos todas las preferencias que guardamos en la app por lo tanto una vez que cerremos la sesion nos lleve al logina activity y  no volver a pasar por la main)"
 , "ayuda (se mandara a un mail falso externo para dudas o ayudar al usuario)" ,
-"cambiar color de fondo" (se cambiara el color del fondo de perfil que lo haremos con un )" la app.
+"cambiar color de fondo" (se cambiara el color del fondo de perfil que lo haremos con un alertdialog con opciones)" la app, tambien se podra cambiar la foto de perfil clickeadno en la imagen por las 4 casas de hogwarts todo se guarda en una preferencia.
 
 -SharedPreferences: Esta clase almacenara las preferencias que son para guardar datos localmente como por ejemplo el nombre de usuario
 
