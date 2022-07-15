@@ -27,14 +27,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
 
+        initializations() //metodo donde iniciallizaremos los fragments
+
+        bottomNavigationListener()
+
+
+    }
+
+    private fun initializations() {
         homeFragment = HomeFragment()
         webFragment = WebFragment()
         settingsFragment = SettingsFragment()
 
         loadFragment(homeFragment) //metodo para cargar el fragment. Le pasamos el homefragment para que inicie primero
-
-        bottomNavigationListener()
-
 
     }
 
@@ -49,10 +54,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadFragment(fragment : Fragment) {
+    private fun loadFragment(fragment : Fragment) { //este metodo pondra el fragmento que mandamo por parametro
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.containerFragment, fragment)
-            commit()
+            commit() //
         }
     }
 

@@ -38,9 +38,9 @@ class SettingsFragment : Fragment() {
     ): View? {
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
 
-        sharedPreferences = com.kotlin.harrypotterapp.SharedPreferences()
+        sharedPreferences = com.kotlin.harrypotterapp.SharedPreferences() // se inicializa las preferencias
 
-        getPrefs()
+        getPrefs() // metodo para obternet las sharedpreferences
         listeners()
 
 
@@ -51,13 +51,13 @@ class SettingsFragment : Fragment() {
     private fun getPrefs() {
         binding.textViewNameUser.text = activity?.let { sharedPreferences.getFullNameUserLoged(it) }
 
-        binding.constraintLayoutBackground.setBackgroundColor(
+        binding.constraintLayoutBackground.setBackgroundColor( // set toma el color de la preferencia para setear el color del fonde perfil
             sharedPreferences.getColorBackground(
                 requireActivity()
             )
         )
 
-        if (sharedPreferences.getBooleanPreImage(requireActivity())) { // validacion para que no haya crash. ya que si entra por primerza vez no tendra un bitmap por lo tanto la app crasheara. el boolean se mantendra qunue se destruya la app
+        if (sharedPreferences.getBooleanPreImage(requireActivity())) { // validacion para que no haya crash. ya que si entra por primerza vez no tendra un bitmap por lo tanto la app crasheara. el boolean se mantendra aunque se destruya la app
             binding.imageProfile.setImageBitmap(sharedPreferences.getBitmapImage(requireContext() as Activity))
         }
     }
@@ -68,7 +68,7 @@ class SettingsFragment : Fragment() {
 
         binding.imageProfile.setOnClickListener {
 
-            selectImgProfileDialog()
+            selectImgProfileDialog()//para elegir foto de perfil
 
         }
 

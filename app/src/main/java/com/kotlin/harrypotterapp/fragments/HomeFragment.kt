@@ -32,7 +32,7 @@ class HomeFragment : Fragment(), OnItemCharacterClickListener {
     private lateinit var adapter: CharacterAdapter
     private val listCharacter = mutableListOf<CharactersModel>()
     private val newListCharacter = mutableListOf<CharactersModel>()
-    private lateinit var searchText:String
+    private lateinit var searchText: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -76,8 +76,8 @@ class HomeFragment : Fragment(), OnItemCharacterClickListener {
             activity?.runOnUiThread {
                 if (call.isSuccessful) { // si el servicio responde 200
                     binding.progressBar.visibility = View.GONE // para que el progressbar no siga
-                    val characters = body?.personajes ?: emptyList()
                     binding.searchView.visibility = View.VISIBLE
+                    val characters = body?.personajes ?: emptyList()
                     listCharacter.clear()
                     listCharacter.addAll(characters)
                     newListCharacter.addAll(characters) // para usarlo en el searchview
@@ -97,51 +97,47 @@ class HomeFragment : Fragment(), OnItemCharacterClickListener {
         newListCharacter.clear() // ser limpia la lista por que si no queba guardado al hacer transiccion de fragments
 
 
-        binding.searchView.setOnSearchClickListener {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
 
+            override fun onQueryTextChange(newText: String?): Boolean {
 
-            binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String?): Boolean {
-                    return false
-                }
+                listCharacter.clear()
 
-                override fun onQueryTextChange(newText: String?): Boolean {
-
-                    listCharacter.clear()
-
-                    searchText = newText!!.lowercase(Locale.getDefault())
-                    if (searchText.isNotEmpty()) {
-                        newListCharacter.forEach {
-                            if (it.personaje != null) {
-                                if (it.personaje.lowercase(Locale.getDefault())
-                                        .contains(searchText)
-                                ) {
-                                    listCharacter.add(it)
-                                }
-
+                searchText = newText!!.lowercase(Locale.getDefault())
+                if (searchText.isNotEmpty()) {
+                    newListCharacter.forEach {
+                        if (it.personaje != null) {
+                            if (it.personaje.lowercase(Locale.getDefault())
+                                    .contains(searchText)
+                            ) {
+                                listCharacter.add(it)
                             }
+
                         }
-
-                        binding.recyclerHome.adapter!!.notifyDataSetChanged()
-
-                    } else {
-                        listCharacter.clear()
-                        listCharacter.addAll(newListCharacter)
-                        binding.recyclerHome.adapter!!.notifyDataSetChanged()
-
                     }
 
-                    return true
+                    binding.recyclerHome.adapter!!.notifyDataSetChanged()
+
+                } else {
+                    listCharacter.clear()
+                    listCharacter.addAll(newListCharacter)
+                    binding.recyclerHome.adapter!!.notifyDataSetChanged()
 
                 }
 
+                return true
 
-            })
-        }
+            }
+
+
+        })
     }
 
     override fun onItemClick(item: CharactersModel, position: Int) {
-        val intent = Intent(context, DetailedCharacterActivity :: class.java)
+        val intent = Intent(context, DetailedCharacterActivity::class.java)
         intent.putExtra("IMAGE_URL", item.imagen) // madanmos informacion a la suiguietne activity
         intent.putExtra("NAME_CHARACTER", item.personaje)
         startActivity(intent)
