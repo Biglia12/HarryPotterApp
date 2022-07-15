@@ -20,14 +20,14 @@
 
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageProfile"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_user_default" />
+            android:src="@drawable/ic_photo_profile" />
 
         <TextView
             android:id="@+id/textViewNameUser"
@@ -38,7 +38,7 @@
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageProfile"
             tools:text="jose 123" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -47,10 +47,14 @@
         android:id="@+id/cardChangeColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:cardCornerRadius="7dp"
         app:cardElevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayoutBackground">
 
         <androidx.appcompat.widget.AppCompatButton
@@ -60,7 +64,7 @@
             android:layout_gravity="center"
             android:background="@color/white"
             android:drawableLeft="@drawable/ic_change_color"
-            android:text="Cambiar Color app" />
+            android:text="Cambiar Fondo" />
 
 
     </androidx.cardview.widget.CardView>
@@ -69,10 +73,14 @@
         android:id="@+id/cardHelp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:orientation="vertical"
         app:cardCornerRadius="7dp"
         app:cardElevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardChangeColor">
 
         <androidx.appcompat.widget.AppCompatButton
@@ -91,10 +99,15 @@
         android:id="@+id/cardButtonLogOut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/white"
         android:orientation="vertical"
         app:cardCornerRadius="7dp"
         app:cardElevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardHelp">
 
         <androidx.appcompat.widget.AppCompatButton
@@ -103,7 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@color/white"
-            android:drawableLeft="@drawable/ic_log_out"
+            android:drawableStart="@drawable/ic_log_out"
             android:text="@string/log_out" />
 
 

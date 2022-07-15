@@ -10,7 +10,12 @@
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/ic_change_color.xml" value="0.3355" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/ic_email.xml" value="0.3355" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.194" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/ic_password.xml" value="0.2075" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/ic_user_default.xml" value="0.234" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/searchview_background.xml" value="0.2075" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/select_image_house.xml" value="0.2965" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/shape_deselected_image.xml" value="0.2965" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/shape_select_image.xml" value="0.2965" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/drawable/splash_background.xml" value="0.25" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/activity_detailed_character.xml" value="0.3641304347826087" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/activity_detailed_characters.xml" value="0.2776268115942029" />
@@ -18,9 +23,12 @@
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/fragment_detailed_characters.xml" value="0.28958333333333336" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/fragment_settings.xml" value="0.2893258426966292" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/fragment_settings.xml" value="0.25" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/fragment_videos.xml" value="0.21" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/fragment_web.xml" value="0.1" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/item_character.xml" value="0.33" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/layout/selecte_image_house.xml" value="0.2916666666666667" />
+        <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/menu/menu_search.xml" value="0.25" />
         <entry key="..\:/ProyectosAndroid/HarryPotterApp/app/src/main/res/menu/nav_menu.xml" value="0.2064814814814815" />
       </map>
     </option>

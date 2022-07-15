@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        window.statusBarColor = ContextCompat.getColor(this, R.color.black)
 
         homeFragment = HomeFragment()
         webFragment = WebFragment()

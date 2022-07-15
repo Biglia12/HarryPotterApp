@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun checkPreference() {
-        if (sharedPreferences.getCloseActivity(this)) { //Esta validacion es para que esta actividad no se vuelva a mostrar una vez que el usuario inicio sesion ya que esto guarda localmente la persistencia de datos en el telefono
+        if (sharedPreferences.getBooleanPrefLogin(this)) { //Esta validacion es para que esta actividad no se vuelva a mostrar una vez que el usuario inicio sesion ya que esto guarda localmente la persistencia de datos en el telefono
             sendToMainActivity()// pasamos a la siguiente activity
         }
     }
@@ -52,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
             if (userString == user.userName && passString == user.passWord) { // validacion para que se compruebe si el usuario es correcto
 
                 sharedPreferences.setFullNameUserLoged(this, userString)
-                sharedPreferences.setCloseActivity(this, true)
+                sharedPreferences.setBooleanPrefLogin(this, true)
                 sendToMainActivity()
 
             } else if (userString.isEmpty() || passString.isEmpty()) { // si el usuario no es correcto

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/ltgray"
+    android:theme="@style/Theme.HarryPotterApp">
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:text="Elija su casa favorita" />
+
+
+    <LinearLayout
+        android:id="@+id/linearImage1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvMsg"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/imageGryffindor"
+            android:layout_width="80dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_image_gryffindor"
+            android:layout_height="90dp" />
+
+        <ImageView
+            android:id="@+id/imageSlytherin"
+            android:layout_width="80dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_image_slytherin"
+            android:layout_height="90dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearImag2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/linearImage1"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/imageHuffelpuff"
+            android:layout_width="80dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_image_hufflepuff"
+            android:layout_height="90dp" />
+
+        <ImageView
+            android:id="@+id/imageRavenclaw"
+            android:layout_width="80dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_image_ravenclaw"
+            android:layout_height="90dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/linearImag2"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="No"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="Confirmar"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+</RelativeLayout>

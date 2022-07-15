@@ -11,6 +11,8 @@
         android:roundIcon="@drawable/harrypotterlogo"
         android:supportsRtl="true"
         android:theme="@style/Theme.HarryPotterApp">
+        <activity android:name=".activities.MainActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.DetailedCharacterActivity"
             android:exported="false" />
@@ -28,7 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity" />
     </application>
 
 </manifest>

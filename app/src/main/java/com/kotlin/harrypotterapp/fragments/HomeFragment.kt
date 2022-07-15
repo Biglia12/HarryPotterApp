@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,6 +22,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 
 
 class HomeFragment : Fragment(), OnItemCharacterClickListener {
@@ -29,6 +31,8 @@ class HomeFragment : Fragment(), OnItemCharacterClickListener {
     private val binding get() = _binding!!
     private lateinit var adapter: CharacterAdapter
     private val listCharacter = mutableListOf<CharactersModel>()
+    private val newListCharacter = mutableListOf<CharactersModel>()
+    private lateinit var searchText:String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,13 +40,14 @@ class HomeFragment : Fragment(), OnItemCharacterClickListener {
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-
         initRecyclerView()
         getRetrofit()
         callServiceHp()
+        searchCharacter()
 
         return binding.root
     }
+
 
     private fun initRecyclerView() {
         adapter = CharacterAdapter(requireContext(), listCharacter, this)
@@ -72,8 +77,10 @@ class HomeFragment : Fragment(), OnItemCharacterClickListener {
                 if (call.isSuccessful) { // si el servicio responde 200
                     binding.progressBar.visibility = View.GONE // para que el progressbar no siga
                     val characters = body?.personajes ?: emptyList()
+                    binding.searchView.visibility = View.VISIBLE
                     listCharacter.clear()
                     listCharacter.addAll(characters)
+                    newListCharacter.addAll(characters) // para usarlo en el searchview
                     adapter.notifyDataSetChanged() // para decirle al adapter que hubo cambios
                 } else { // por cualquier error del servicio
                     binding.progressBar.visibility = View.GONE
@@ -83,6 +90,54 @@ class HomeFragment : Fragment(), OnItemCharacterClickListener {
             }
         }
 
+    }
+
+    private fun searchCharacter() {
+
+        newListCharacter.clear() // ser limpia la lista por que si no queba guardado al hacer transiccion de fragments
+
+
+        binding.searchView.setOnSearchClickListener {
+
+
+            binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+
+                    listCharacter.clear()
+
+                    searchText = newText!!.lowercase(Locale.getDefault())
+                    if (searchText.isNotEmpty()) {
+                        newListCharacter.forEach {
+                            if (it.personaje != null) {
+                                if (it.personaje.lowercase(Locale.getDefault())
+                                        .contains(searchText)
+                                ) {
+                                    listCharacter.add(it)
+                                }
+
+                            }
+                        }
+
+                        binding.recyclerHome.adapter!!.notifyDataSetChanged()
+
+                    } else {
+                        listCharacter.clear()
+                        listCharacter.addAll(newListCharacter)
+                        binding.recyclerHome.adapter!!.notifyDataSetChanged()
+
+                    }
+
+                    return true
+
+                }
+
+
+            })
+        }
     }
 
     override fun onItemClick(item: CharactersModel, position: Int) {
